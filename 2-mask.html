@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width:470px;
+				height:531px;
+				border:1px solid red;
+			}
+			.box div{
+				width:470px;
+				height:531px;
+				background: url(img/bg.jpg) no-repeat;
+				-webkit-mask: url(img/1.png) no-repeat;
+				/*transition: 3s;*/
+			}
+			.box:hover div{
+				-webkit-mask-position: 300px 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div id="div1"></div>
+		</div>
+		<script>
+			var oDiv = document.getElementById('div1');
+			oDiv.onmousemove = function(ev){
+				oDiv.style['-webkit-mask-position'] = (ev.clientX-50)+'px '+(ev.clientY-36)+'px';
+			}
+		</script>
+	</body>
+</html>
